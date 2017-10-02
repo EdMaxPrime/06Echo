@@ -8,7 +8,10 @@ def root():
 
 @app.route('/welcome', methods=['GET', 'POST'])
 def tracker():
-    return render_template("welcome.html", name = request.args['motto'], query = request.args, method = request.method)
+    if request.method == "GET":
+        return render_template("welcome.html", name = request.args['motto'], query = request.args, method = request.method)
+    else:
+        return render_template("welcome.html", name = request.form['motto'], query = request.form, method = request.method)
 
 if __name__ == "__main__":
     app.debug = True
