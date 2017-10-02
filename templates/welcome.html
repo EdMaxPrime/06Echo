@@ -5,9 +5,9 @@
     <h2>Hello {{ name }}</h2>
     <table border="1">
       <tr><th>Name</th><th>Value</th></tr>
-      {{% for n in query %}}
+      {% for n in query %}
       <tr><td>{{ n }}</td><td>{{ query[n] }}</td></tr>
-      {{% endfor %}}
+      {% endfor %}
     </table>
     <br>
     Yout got here via: {{ method }}
